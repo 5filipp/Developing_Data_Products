@@ -1,11 +1,11 @@
 library(shiny)
-data(houses)
+data <- read.csv("houses.csv")
 
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
   
   # App title ----
-  titlePanel("Ozone level!"),
+  titlePanel("Houses Pricing. Melbourne 2018. DDP project. Filipp Trubin. Jan 06 2022"),
   
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
@@ -38,13 +38,14 @@ server <- function(input, output) {
 
   output$distPlot <- renderPlot({
     
-    x    <- airquality$Ozone
+    x    <- data$Price
     x    <- na.omit(x)
     bins <- seq(min(x), max(x), length.out = input$bins + 1)
     
     hist(x, breaks = bins, col = "#75AADB", border = "black",
-         xlab = "Ozone level",
-         main = "Histogram of Ozone level")
+         xlab = "Price (in K)",
+         las=1,
+         main = "Pricing chart depends on Land Area")
     
   })
   
