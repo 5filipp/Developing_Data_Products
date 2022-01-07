@@ -1,13 +1,13 @@
 library(shiny)
 data <- read.csv("houses.csv")
 
-# Define UI for app that draws a histogram ----
+# Defining UI
 ui <- fluidPage(
   
-  # App title ----
+  # App title
   titlePanel("Houses Pricing. Melbourne 2018. DDP project. Filipp Trubin. Jan 06 2022"),
   
-  # Sidebar layout with input and output definitions ----
+  # Sidebar layout 
   sidebarLayout(
     
     # Sidebar panel for inputs ----

@@ -1,0 +1,42 @@
+Data Science Specialization | JHU
+Course project: Development Data Products
+Houses Pricing. Melbourne 2018.
+========================================================
+author: Filipp Trubin
+date: January 06 2022
+autosize: true
+
+ 
+========================================================
+
+The Application reflects dependency Pricing on LandArea in Melbourne.
+Dataset ib provided by estate association. 
+The Graph is adjustable by tuning bin size interactively.
+
+GitHub repo:
+https://github.com/5filipp/Developing_Data_Products.git
+
+DataSet Info
+========================================================
+
+```{r}
+dataH <- read.csv("houses.csv")
+summary(dataH)
+```
+
+BarPlot
+========================================================
+
+```{r, echo=FALSE}
+barplot(dataH$Price, names.arg = dataH$LotArea,
+        main="Houses Pricing",
+        xlab="Prices",
+        ylab="LotArea")
+```
+
+Application Interface
+========================================================
+![alt text](graph.png)
+
+
+
